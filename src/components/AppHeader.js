@@ -1,9 +1,12 @@
 import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { toggleFavorites } from '../actions/favoritesActions';
 
-const AppHeader = (props) => {
-  const appTitle = "";
-  const displayFavorites = true;
+const AppHeader = () => {
+  const appTitle = useSelector(store => store.appTitle);
+  const displayFavorites = useSelector((store) => store.favoritesReducer.displayFavorites);
+  const dispatch = useDispatch();
 
   return (
     <div className="flex justify-between items-center shadow rounded-md bg-white p-2 pl-3 my-3">
@@ -12,7 +15,7 @@ const AppHeader = (props) => {
         <div className="myButton bg-blue-600 hover:bg-blue-500">
           <span>Favorileri {displayFavorites ? "gizle" : "göster"}</span>
         </div>
-        <Link to="/movies" className="myButton bg-blue-600 hover:bg-blue-500">Tüm filmler</Link>
+        <Link to="/movies" onClick={() => {dispatch(toggleFavorites())}} className="myButton bg-blue-600 hover:bg-blue-500">Tüm filmler</Link>
         <Link to="/movies/add" className="myButton bg-green-700 hover:bg-green-600">
           <i className="material-icons text-sm">&#xE147;</i>
           <span>Yeni film ekle</span>
