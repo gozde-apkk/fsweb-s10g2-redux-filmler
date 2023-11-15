@@ -20,26 +20,26 @@ const Movie = () => {
       <div className="p-5 pb-3 border-b border-zinc-200">
         <h4 className="text-xl font-bold">{movie.title} Detayları</h4>
       </div>
-      <div className='px-5 py-3'>
-        <div className='py-1 flex'>
-          <div className='view-label'>İsim</div>
+      <div className="px-5 py-3">
+        <div className="py-1 flex">
+          <div className="view-label">İsim</div>
           <div className="flex-1">{movie.title}</div>
         </div>
-        <div className='py-1 flex'>
-          <div className='view-label'>Yönetmen</div>
+        <div className="py-1 flex">
+          <div className="view-label">Yönetmen</div>
           <div className="flex-1">{movie.director}</div>
         </div>
-        <div className='py-1 flex'>
-          <div className='view-label'>Tür</div>
+        <div className="py-1 flex">
+          <div className="view-label">Tür</div>
           <div className="flex-1">{movie.genre}</div>
         </div>
-        <div className='py-1 flex'>
-          <div className='view-label'>Metascore</div>
+        <div className="py-1 flex">
+          <div className="view-label">Metascore</div>
           <div className="flex-1">{movie.metascore}</div>
         </div>
-        <div className='py-1 flex'>
-          <div className='view-label'>Açıklama</div>
-          <p className='flex-1'>{movie.description}</p>
+        <div className="py-1 flex">
+          <div className="view-label">Açıklama</div>
+          <p className="flex-1">{movie.description}</p>
         </div>
       </div>
       <div className="px-5 py-3 border-t border-zinc-200 flex justify-end gap-2">
@@ -48,6 +48,6 @@ const Movie = () => {
       </div>
     </div>
   );
-}
+};
 
 export default Movie;
